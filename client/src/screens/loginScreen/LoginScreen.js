@@ -16,6 +16,7 @@ import {
   DEVELOPER_CATEGORY,
   DEVELOPER_HOME_SCREEN_ROUTE_NAME,
   MEMBER_CATEGORY,
+  REGISTRATION_SCREEN_ROUTE_NAME,
   SOCIETY_CATEGORY,
 } from "../../constants/strings";
 import { login } from "../../redux/actions/auth";
@@ -145,7 +146,11 @@ function LoginScreen({ login, isAuthenticated, isLoading, navigation }) {
         <TouchableOpacity style={styles.forgotPasswordContainer}>
           <Text style={styles.forgotPassword}>Forgot your password?</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate(REGISTRATION_SCREEN_ROUTE_NAME);
+          }}
+        >
           <Text style={styles.createAccount}>New here? Create account :)</Text>
         </TouchableOpacity>
       </ScrollView>
