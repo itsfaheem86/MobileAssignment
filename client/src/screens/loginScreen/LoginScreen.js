@@ -17,6 +17,7 @@ import {
   DEVELOPER_CATEGORY,
   MEMBER_CATEGORY,
   REGISTRATION_SCREEN_ROUTE_NAME,
+  REQUEST_RESET_PASSWORD,
   SOCIETY_CATEGORY,
 } from '../../constants/strings';
 import {login} from '../../redux/actions/auth';
@@ -140,7 +141,11 @@ function LoginScreen({login, isAuthenticated, isLoading, navigation}) {
             />
           )}
         </TouchableOpacity>
-        <TouchableOpacity style={styles.forgotPasswordContainer}>
+        <TouchableOpacity
+          style={styles.forgotPasswordContainer}
+          onPress={() => {
+            navigation.navigate(REQUEST_RESET_PASSWORD);
+          }}>
           <Text style={styles.forgotPassword}>Forgot your password?</Text>
         </TouchableOpacity>
         <TouchableOpacity
